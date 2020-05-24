@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ETL</title>  
+    <!-- Import some CSS, just to show how it's done. -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"></link>
+</head>
+
+<body>
+    
+    <img src="../static/images/Diabetes_1.jpg" style="width: 800px; height:200px;" class="center"/>     
+    
+    <nav class="navbar navbar-custom">           
+        <ul class="nav navbar-nav">
+          <li ><a class="navbar-brand" href="index.html">HOME</a></li>
+          <li class="active"><a class="navbar-brand" href="etl.html">ETL</a></li>
+          <li><a class="navbar-brand" href="ml.html">MACHINE LEARNING</a></li>
+        </ul>
+    </nav>       
+    <h1 class="ml15">
+        <span class="word">EXTRACT</span>
+        <span class="word">TRANSFORM</span>
+        <span class="word">LOAD</span>                       
+    </h1>
+    <div class="container">
+      
+        <div class="row">        
+          <div class="col-md-12 jumbotron text-left">
+                <p style="text-align:left;"><h2>DATABASE</h2></p>
+                <p>
+                    <h3>
+                        We used a SQLite Database named diabetes.db for this project. The database was created using the sqlite3.exe as follows:
+                            <br><br>
+                            <code>sqlite3 diabetes.db;</code>
+                            <br><br>There was a table created to hold the dataset. The table was named diabetes_attributes 
+                            <br><BR><BR>CREATE TABLE SQL
+                            
+                            <code>
+                            <br><br>    CREATE TABLE diabetes_attributes(
+                            <br>    Pregnancies INTEGER NOT NULL,
+                            <br>    Glucose INTEGER NOT NULL,
+                            <br>        BloodPressure INTEGER NOT NULL,
+                            <br>        SkinThickness INTEGER NOT NULL,
+                            <br>       Insulin INTEGER NOT NULL,
+                            <br>        BMI INTEGER NOT NULL,
+                            <br>        DiabetesPedigreeFunction INTEGER NOT NULL,
+                            <br>        Age INTEGER NOT NULL,
+                            <br>        Outcome INTEGER NOT NULL
+                            <br>      );        
+
+                            </code>
+                    </h3>
+                </p> 
+          </div>
+        </div>
+
+        <div class="row">        
+            <div class="col-md-12 jumbotron text-left">
+                  <p style="text-align:left;"><h2>EXTRACT(E) and LOAD(L)</h2></p>
+                  <h3>Both Extract(E) and Load(L) processes were executed using SQLite's import utility :
+                  <br>
+                     <code>
+                     <br>.mode csv
+                     <br>.import c:/sqllite/diabetes.csv diabetes_attributes
+                    </code>
+                </h3>  
+            </div>
+        </div>  
+        <div class="row">        
+            <div class="col-md-12 jumbotron text-left">
+                  <p style="text-align:left;"><h2>TRANSFORMATION(T)</h2></p>
+                  <h3>The input data elements were direct mapped to the fields in the table without any transformation
+                  </h3>  
+            </div>
+        </div>
+        <div class="row">        
+            <div class="col-md-12 jumbotron text-left">
+                  <p style="text-align:left;"><h2>DATASET</h2></p>
+                  <h3>Preview of the dataset read in the code(Jupyter Notebook)</h3>
+                  <img src="../static/images/df.png"/>                  
+            </div>
+            
+        </div>   
+
+
+
+
+
+    </div>
+    <footer><h5>
+        <b>&copy;Bootcamp 2020 Dhingra & Ornelas </b>
+       </h5>
+       </footer>
+</body>
+
+</html>

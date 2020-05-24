@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Machine Learning</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css"></link>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <img src="../static/images/Diabetes_1.jpg" style="width:800px; height:200px;" class="center"/>    
+    <nav class="navbar navbar-custom"> 
+      <ul class="nav navbar-nav">
+        <li ><a class="navbar-brand" href="index.html">HOME</a></li>
+        <li><a class="navbar-brand" href="etl.html">ETL</a></li>
+        <li class="active"><a class="navbar-brand" href="ml.html">MACHINE LEARNING</a></li>
+      </ul>
+    </nav>
+ <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Machine Learning</h1>
+        <p>Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. Machine learning focuses on the development of computer programs that can access data and use it learn for themselves</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="well">
+          <h2>k-Nearest Neighbors</h2>
+          <p>The k-NN algorithm is arguably the simplest machine learning algorithm. Building the model consists only of storing the training data set. To make a prediction for a new data point, the algorithm finds the closest data points in the training data set — its “nearest neighbors.”</p>
+          <p>n_neighbors=9</p>
+          <img src="../static/images/knn_compare_model.png" alt="knn graph" >
+        </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="well">
+          <h2>Decision tree learning</h2>
+          <p>is one of the predictive modelling approaches used in statistics, data mining and machine learning. It uses a decision tree (as a predictive model) to go from observations about an item (represented in the branches) to conclusions about the item's target value (represented in the leaves)</p>
+          
+          <h2>Feature Importance in Decision Trees</h2>
+          <p>Feature importance rates how important each feature is for the decision a tree makes. It is a number between 0 and 1 for each feature, where 0 means “not used at all” and 1 means “perfectly predicts the target”. The feature importances always sum to 1:</p>
+          <p>The project dataset contains eight features. The first decision tree model indicates that skinthickness has no importance</p>
+          <img src="../static/images/feature_importance.png" alt="feature_importance graph" >
+          <code>
+            <br>
+          Accuracy on training set: 0.845
+            <br>
+          Accuracy on test set: 0.750
+
+          </code>
+          <br> <br>
+          <p>We wanted to try removing the skinthickness feature to see if there was a change in the accuracy of the results </p>
+          <img src="../static/images/feature_importance_without_skinthickness.png" alt="feature_importance graph" >
+          <br>
+          <p>The change in accuracy after removing the skinthickness was negligible </p>
+          <code>
+          Accuracy on training set: 0.814
+            <br>
+          Accuracy on test set: 0.755 
+
+          </code>
+          <br> <br>
+          <p>We wanted to try removing the most significant feature (Glucose) to see if there was a change in the accuracy of the results </p>
+          <img src="../static/images/feature_importance_without_skinthickness_or_glucose.png" alt="feature_importance graph" >
+          <br>
+          <p>The change in accuracy observed after removing the glucose was 1 percent for the test. The training accuracy went down almost 6 percent </p>
+         
+          <code>
+          Accuracy on training set: 0.769
+          <br>
+          Accuracy on test set: 0.745 
+        </code>
+        <br> <br>
+
+
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well">
+          <h2>Random Forest</h2>
+          <p>Random forest is a supervised learning algorithm which is used for both classification as well as regression. But however, it is mainly used for classification problems. As we know that a forest is made up of trees and more trees means more robust forest. Similarly, random forest algorithm creates decision trees on data samples and then gets the prediction from each of them and finally selects the best solution by means of voting. It is an ensemble method which is better than a single decision tree because it reduces the over-fitting by averaging the result.</p>
+          <img src="../static/images/feature_importance_random_forest.png" alt="random_feature_importance graph" >
+         <p>The all eight feautres show some level of importance,however; The accuracy rate on the training set indicates over-fitting and adjustments are necesary</p>
+          <code>
+        Accuracy on training set: 1.000
+        <br>
+        Accuracy on test set: 0.786 
+        </code>
+      <br><br>
+
+      <p>After adjusting the hyper parameter we observed an acceptable result for both training and test data sets</p>
+      <code>Accuracy on training set: 0.880
+        <br>Accuracy on test set: 0.792
+      </code>
+      <br><br>
+      <p><b>After comparing the accuracy results of the three ML models above, Random Forest showed the highest accuracy rate.Therefore Random Forest is the preferred ML model for this project</b></p>
+      
+        </div>
+      </div>    
+   
+      </div>
+</div>
+<footer><h5>
+  <b>&copy;Bootcamp 2020 Dhingra & Ornelas </b>
+ </h5>
+ </footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+sqlite3 diabetes.db
+
+
+CREATE TABLE diabetes_attributes(
+  Pregnancies INTEGER NOT NULL,
+  Glucose INTEGER NOT NULL,
+  BloodPressure INTEGER NOT NULL,
+  SkinThickness INTEGER NOT NULL,
+  Insulin INTEGER NOT NULL,
+  BMI INTEGER NOT NULL,
+  DiabetesPedigreeFunction INTEGER NOT NULL,
+  Age INTEGER NOT NULL,
+  Outcome INTEGER NOT NULL
+);
+
+
+
+.mode csv
+
+
+.import c:/sqllite/diabetes.csv diabetes_attributes
+
